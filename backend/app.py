@@ -5,6 +5,13 @@ import torch
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 import nltk  # type: ignore
 
+# Replace 'YOUR_TOKEN' with your actual GitHub personal access token
+headers = {
+    'Authorization': 'token YOUR_TOKEN',
+    'Accept': 'application/vnd.github.v3+json'
+}
+
+
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)  # Allow requests from React frontend
@@ -91,7 +98,7 @@ def upload_pdf():
 
 # Run Flask app
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=9000)
+    app.run(debug=True)
 
 
 
